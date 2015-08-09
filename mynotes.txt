@@ -1,0 +1,7 @@
+Making in Windows environment
+-----------------------------
+$ qmake -project -norecursive
+  # Add the following line to the .pro file:
+  # QT = core gui widgets
+$ qmake
+$ make
