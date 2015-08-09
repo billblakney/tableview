@@ -1,10 +1,8 @@
-#include <QtWidgets/qapplication.h>
-#include <QtWidgets/qtableview.h>
-#include <QtWidgets/qheaderview.h>
+#include <QApplication.h>
+#include <Qtableview.h>
+#include <Qheaderview.h>
 #include <QApplication>
-
-#include "mywidget.h"
-#include "MyModel.h"
+#include "TableModel.hh"
 
 int main(int argc,char **argv)
 {
@@ -20,7 +18,7 @@ int main(int argc,char **argv)
 
    QApplication a(argc, argv);
    QTableView tableView;
-   MyModel myModel(0);
+   TableModel myModel(0);
    tableView.setModel( &myModel );
 //   tableView.setFixedsize(500,300);
    tableView.setGeometry(600,200,500,800); // x,y,w,h

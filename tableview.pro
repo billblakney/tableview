@@ -9,5 +9,5 @@ INCLUDEPATH += .
 QT = core gui widgets
 
 # Input
-HEADERS += mywidget.h MyModel.h
-SOURCES += main.cpp mywidget.cpp MyModel.cpp
+HEADERS += TableModel.hh
+SOURCES += main.cc TableModel.cc
