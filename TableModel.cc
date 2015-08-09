@@ -8,7 +8,15 @@ TableModel::TableModel(QObject *parent)    :QAbstractTableModel(parent){}in
 
    switch( role ){
    case Qt::DisplayRole:      return QString("Row%1, Column%2")            .arg(index.row() + 1)            .arg(index.column() +1);      break;
-   case Qt::FontRole:      if (row == 0 && col == 0) //change font only for cell(0,0)      {         QFont boldFont;         boldFont.setBold(true);         return boldFont;      }      break;   case Qt::BackgroundRole:      if (row == 1 && col == 2)  //change background only for cell(1,2)      {         QBrush redBackground(Qt::red);         return redBackground;      }      break;
+   case Qt::FontRole:      if (row == 0 && col == 0) //change font only for cell(0,0)      {         QFont boldFont;         boldFont.setBold(true);         return boldFont;      }      break;   case Qt::BackgroundRole:
+      {      QBrush blackBackground(Qt::black);      return blackBackground;
+      }      break;
+   case Qt::ForegroundRole:
+      {
+      QBrush whiteForeground(Qt::white);
+      return whiteForeground;
+      }
+      break;
    default:
      return v;
      break;
@@ -17,4 +25,31 @@ TableModel::TableModel(QObject *parent)    :QAbstractTableModel(parent){}in
 //   return v;
 }
 
-QVariant TableModel::headerData(int section, Qt::Orientation orientation, int role) const{   if (role == Qt::DisplayRole)   {      if (orientation == Qt::Horizontal) {         switch (section)         {         case 0:            return QString("first");         case 1:            return QString("second");         case 2:            return QString("third");         }      }   }   return QVariant();}
+QVariant TableModel::headerData(int section, Qt::Orientation orientation, int role) const{   switch( role ){
+   case Qt::DisplayRole:
+      {         if (orientation == Qt::Horizontal)
+          {             switch (section)             {             case 0:                return QString("first");             case 1:                return QString("second");             case 2:                return QString("third");             }          }      }
+      break;
+#if 1
+   case Qt::BackgroundRole:
+      {
+      QBrush blackBackground(Qt::green);
+      return blackBackground;
+      }
+      break;
+#endif
+   case Qt::ForegroundRole:
+   {
+      QBrush foreground(Qt::blue);
+      return foreground;
+   }
+   break;
+#if 0
+   default:
+   {
+      QBrush foreground(Qt::blue);
+      return foreground;
+   }
+   break;
+#endif
+   }   return QVariant();}

@@ -2,8 +2,10 @@
 .cproject
 .DS_Store
 Makefile
+Makefile.*
 *.o
 *.app
 *.stash
 moc_*.*
+release/
 /Qt Windows/

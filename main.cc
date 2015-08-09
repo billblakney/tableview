@@ -17,11 +17,13 @@ int main(int argc,char **argv)
 #endif
 
    QApplication a(argc, argv);
+//   QApplication::setStyle("WindowsXP");
    QTableView tableView;
    TableModel myModel(0);
    tableView.setModel( &myModel );
 //   tableView.setFixedsize(500,300);
    tableView.setGeometry(600,200,500,800); // x,y,w,h
+   tableView.horizontalHeader()->setStyleSheet("color: red");
    tableView.verticalHeader()->hide();
    tableView.show();
    return a.exec();
