@@ -7,7 +7,8 @@ TARGET = tableview
 INCLUDEPATH += .
 # Need to add this next line, then rerun "qmake".
 QT = core gui widgets
+CONFIG += console
 
 # Input
-HEADERS += TableModel.hh
-SOURCES += main.cc TableModel.cc
+HEADERS += TableView.hh TableModel.hh
+SOURCES += main.cc TableView.cc TableModel.cc
