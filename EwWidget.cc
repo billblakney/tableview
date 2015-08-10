@@ -21,3 +21,13 @@ EwWidget::EwWidget(QWidget *aParent)
 EwWidget::~EwWidget()
 {
 }
+
+void EwWidget::addContact()
+{
+  qDebug("addContact");
+}
+
+void EwWidget::addClir()
+{
+  qDebug("addClir");
+}

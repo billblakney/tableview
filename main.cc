@@ -12,8 +12,6 @@
 
 int main(int argc, char **argv)
 {
-  const int kWidth = 400;
-
   QApplication a(argc, argv);
 
   QWidget *tWidget = new QWidget(0);
@@ -29,6 +27,9 @@ int main(int argc, char **argv)
   tLayout->addWidget(tAddClirButton);
 
   tWidget->setLayout(tLayout);
+
+  QObject::connect(tAddContactButton,SIGNAL(released()),tEwWidget,SLOT(addContact()));
+  QObject::connect(tAddClirButton,SIGNAL(released()),tEwWidget,SLOT(addClir()));
 
   tWidget->show();
 

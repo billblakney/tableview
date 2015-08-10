@@ -13,6 +13,10 @@ public:
 
   EwWidget(QWidget *aParent);
   virtual ~EwWidget();
+
+public slots:
+  void addContact();
+  void addClir();
 };
 
 #endif /* EWWIDGET_HH_ */
