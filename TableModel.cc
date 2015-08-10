@@ -3,19 +3,19 @@
 #include <QFont>
 #include "TableModel.hh"
 
-TableModel::TableModel(QObject *parent) :
-    QAbstractTableModel(parent)
-{
-}
+TableModel::TableModel(QObject *parent,int aRows,int aCols)
+  : QAbstractTableModel(parent),
+    _rows(aRows),
+    _cols(aCols){}
 
 int TableModel::rowCount(const QModelIndex & /*parent*/) const
 {
-  return 20;
+  return _rows;
 }
 
 int TableModel::columnCount(const QModelIndex & /*parent*/) const
 {
-  return 3;
+  return _cols;
 }
 
 QVariant TableModel::data(const QModelIndex &index, int role) const
@@ -78,6 +78,6 @@ QVariant TableModel::headerData(int section, Qt::Orientation orientation,
     return foreground;
     break;
   }
-  }
+  case Qt::BackgroundRole: // seems not applicable  {    QBrush foreground(Qt::gray);    return foreground;    break;  }  }
   return QVariant();
 }
