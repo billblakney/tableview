@@ -20,6 +20,11 @@ int main(int argc, char **argv)
   QApplication a(argc, argv);
 #define NEW
 #ifdef NEW
+#if 0
+  QAbstractScrollArea::setHorizontalScrollBarPolicy( Qt::ScrollBarAlwaysOff);
+  QAbstractScrollArea::setVerticalScrollBarPolicy( Qt::ScrollBarAlwaysOff);
+#endif
+
   QSplitter *splitter = new QSplitter(Qt::Vertical, 0);
   splitter->setHandleWidth(0);
 
@@ -28,6 +33,10 @@ int main(int argc, char **argv)
 
   splitter->addWidget(tableView1);
   splitter->addWidget(tableView2);
+
+  tableView1->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+//  splitter->getScrollArea();
 
   splitter->show();
 #else
