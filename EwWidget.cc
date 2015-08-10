@@ -12,10 +12,9 @@ EwWidget::EwWidget(QWidget *aParent)
   setStyleSheet("QHeaderView::section { background-color: gray;}");
 
   TableView *tableView1 = new TableView(this,kWidth,4);
+  TableView *tableView2 = new TableView(this,kWidth,5);
 
   int tTableHeight = tableView1->height();
-
-  TableView *tableView2 = new TableView(this,kWidth,5);
   tableView2->move(0,tTableHeight);
 }
 
