@@ -11,5 +11,5 @@ QT = core gui
 CONFIG += console
 
 # Input
-HEADERS += TableView.hh TableModel.hh
-SOURCES += main.cc TableView.cc TableModel.cc
+HEADERS += EwWidget.hh TableView.hh TableModel.hh
+SOURCES += main.cc EwWidget.cc TableView.cc TableModel.cc
