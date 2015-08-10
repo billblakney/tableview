@@ -1,45 +1,45 @@
 #include <QApplication>
 #include <QTableView>
-#include <QHeaderview>
+#include <QHeaderView>
 #include <QSplitter>
 #include "TableModel.hh"
 
 QTableView *getTableView()
 {
   QTableView *tableView = new QTableView(0);
-   TableModel *myModel = new TableModel(0);
-   tableView->setModel( myModel );
-   tableView->setGeometry(600,200,500,400); // x,y,w,h
-   tableView->setStyleSheet("QHeaderView::section { background-color:gray }");
-   tableView->verticalHeader()->hide();
-   return tableView;
+  TableModel *myModel = new TableModel(0);
+  tableView->setModel(myModel);
+  tableView->setGeometry(600, 200, 500, 400); // x,y,w,h
+  tableView->setStyleSheet("QHeaderView::section { background-color:gray }");
+  tableView->verticalHeader()->hide();
+  return tableView;
 }
 
-int main(int argc,char **argv)
+int main(int argc, char **argv)
 {
-   QApplication a(argc, argv);
+  QApplication a(argc, argv);
 #define NEW
 #ifdef NEW
-  QSplitter *splitter = new QSplitter(Qt::Vertical,0);
+  QSplitter *splitter = new QSplitter(Qt::Vertical, 0);
   splitter->setHandleWidth(0);
 
-   QTableView *tableView1 = getTableView();
-   QTableView *tableView2 = getTableView();
+  QTableView *tableView1 = getTableView();
+  QTableView *tableView2 = getTableView();
 
-splitter->addWidget(tableView1);
-splitter->addWidget(tableView2);
+  splitter->addWidget(tableView1);
+  splitter->addWidget(tableView2);
 
-   splitter->show();
+  splitter->show();
 #else
-   QTableView tableView(0);
-   TableModel myModel(0);
-   tableView.setModel( &myModel );
-   tableView.setGeometry(600,200,500,800); // x,y,w,h
-   tableView.setStyleSheet("QHeaderView::section { background-color:gray }");
-   tableView.verticalHeader()->hide();
-   tableView.show();
+  QTableView tableView(0);
+  TableModel myModel(0);
+  tableView.setModel( &myModel );
+  tableView.setGeometry(600,200,500,800); // x,y,w,h
+  tableView.setStyleSheet("QHeaderView::section { background-color:gray }");
+  tableView.verticalHeader()->hide();
+  tableView.show();
 #endif
-   return a.exec();
+  return a.exec();
 }
 #if 0
 QListView *listview = new QListView;

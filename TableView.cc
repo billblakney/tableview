@@ -7,12 +7,14 @@
 
 #include "TableView.hh"
 
-TableView::TableView() {
-   // TODO Auto-generated constructor stub
+TableView::TableView()
+{
+  // TODO Auto-generated constructor stub
 
 }
 
-TableView::~TableView() {
-   // TODO Auto-generated destructor stub
+TableView::~TableView()
+{
+  // TODO Auto-generated destructor stub
 }
 

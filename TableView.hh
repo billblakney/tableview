@@ -8,10 +8,11 @@
 #ifndef TABLEVIEW_HH_
 #define TABLEVIEW_HH_
 
-class TableView {
+class TableView
+{
 public:
-   TableView();
-   virtual ~TableView();
+  TableView();
+  virtual ~TableView();
 };
 
 #endif /* TABLEVIEW_HH_ */
