@@ -1,6 +1,7 @@
 #include <iostream>
 #include <QBrush>
 #include <QFont>
+#include <QVariant>
 #include "TableModel.hh"
 
 #ifdef USE_ABSTRACT
@@ -57,8 +58,8 @@ TableModel::TableModel(QObject *parent,int aRows)
     appendRow(tList);
     for( int j = 0; j < kColumns; j++ )
     {
-      setData(index(i,j),Qt::black,Qt::BackgroundRole);
-      setData(index(i,j),Qt::white,Qt::ForegroundRole);    }
+      setData(index(i,j),QColor(Qt::blue),Qt::BackgroundRole);
+      setData(index(i,j),QColor(Qt::white),Qt::ForegroundRole);    }
   }
 }
 #endif
