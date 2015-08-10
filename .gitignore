@@ -5,6 +5,8 @@ Makefile
 Makefile.*
 *.o
 *.app
+tableview
+tableview.exe
 *.stash
 moc_*.*
 release/
