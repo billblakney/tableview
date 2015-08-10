@@ -5,17 +5,19 @@
 const int EwWidget::kWidth = 400;
 
 EwWidget::EwWidget(QWidget *aParent)
-  : QWidget(aParent)
+  : QWidget(aParent),
+    _ContactTable(0),
+    _ClirTable(0)
 {
   setFixedSize(kWidth,500);
   setContentsMargins(0,0,0,0);
   setStyleSheet("QHeaderView::section { background-color: gray;}");
 
-  TableView *tableView1 = new TableView(this,kWidth,4);
-  TableView *tableView2 = new TableView(this,kWidth,5);
+  _ContactTable = new TableView(this,kWidth,4);
+  _ClirTable = new TableView(this,kWidth,5);
 
-  int tTableHeight = tableView1->height();
-  tableView2->move(0,tTableHeight);
+  int tTableHeight = _ContactTable->height();
+  _ClirTable->move(0,tTableHeight);
 }
 
 EwWidget::~EwWidget()

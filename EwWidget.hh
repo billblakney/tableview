@@ -17,6 +17,10 @@ public:
 public slots:
   void addContact();
   void addClir();
+
+private:
+  TableView *_ContactTable;
+  TableView *_ClirTable;
 };
 
 #endif /* EWWIDGET_HH_ */
