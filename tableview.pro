@@ -6,7 +6,8 @@ TEMPLATE = app
 TARGET = tableview
 INCLUDEPATH += .
 # Need to add this next line, then rerun "qmake".
-QT = core gui widgets
+#QT = core gui widgets
+QT = core gui
 CONFIG += console
 
 # Input
