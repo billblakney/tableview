@@ -1,10 +1,3 @@
-/*
- * TableModel.h
- *
- *  Created on: Aug 8, 2015
- *      Author: Bill
- */
-
 #ifndef TABLEMODEL_HH_
 #define TABLEMODEL_HH_
 
@@ -12,15 +5,14 @@
 
 #ifdef USE_ABSTRACT
 #include <QAbstractTableModel>
-#else
-#include <QStandardItemModel>
 #endif
+#include <QBrush>
+#include <QStandardItemModel>
 
 #ifdef USE_ABSTRACT
 class TableModel: public QAbstractTableModel
-#else
-class TableModel: public QStandardItemModel
 #endif
+class TableModel: public QStandardItemModel
 {
   Q_OBJECT
 public:
@@ -35,6 +27,14 @@ public:
   static const int kColAMP;
   static const int kColPW;
 
+  static const QColor kHeaderForegroundColor;
+  static const QColor kHeaderBackgroundColor;
+  static const QColor kDataBackgroundColor;
+  static const QColor kDataForegroundColor;
+
+  static QFont kHeaderFont;
+  static QFont kDataFont;
+
   TableModel(QObject *parent,int aRows);
 #ifdef USE_ABSTRACT
   int rowCount(const QModelIndex &parent = QModelIndex()) const;
@@ -42,17 +42,20 @@ public:
   QString getCellValue(int aRow,int aCol) const;
   QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
   QVariant headerData(int section, Qt::Orientation orientation, int role) const;
-#else
-  void setupHorizontalHeader();
 #endif
+  void setupHorizontalHeader();
 
   void addRow();
   void removeRow();
 
 private:
 #ifdef USE_ABSTRACT
+  static const QBrush kHeaderForegroundBrush;
+  static const QBrush kHeaderBackgroundBrush;
+  static const QBrush kDataBackgroundBrush;
+  static const QBrush kDataForegroundBrush;
+
   int _rows;
-#else
 #endif
 };
 
