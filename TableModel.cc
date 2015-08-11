@@ -40,6 +40,13 @@ TableModel::TableModel(QObject *parent,int aRows)
 }
 #endif
 
+#ifdef USE_ABSTRACT
+#else
+void TableModel::removeRow()
+{
+  removeRows(0,1);
+}
+
 void TableModel::addRow()
 {
 tBlackBrush.setColor(Qt::red);
@@ -72,6 +79,7 @@ tBlackBrush.setColor(Qt::red);
       setData(index(tRow,i),QColor(Qt::white),Qt::ForegroundRole);
     }
 }
+#endif
 
 #ifdef USE_ABSTRACT
 int TableModel::rowCount(const QModelIndex & /*parent*/) const

@@ -17,7 +17,9 @@ public:
 
 public slots:
   void addContact();
+  void removeContact();
   void addClir();
+  void removeClir();
 
 private:
   TableView *_ContactTable;

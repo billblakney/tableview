@@ -37,8 +37,21 @@ void EwWidget::addContact()
   moveClirTable();
 }
 
+void EwWidget::removeContact()
+{
+  qDebug("removeContact");
+  _ContactTable->removeRow();
+  moveClirTable();
+}
+
 void EwWidget::addClir()
 {
   qDebug("addClir");
   _ClirTable->addRow();
+}
+
+void EwWidget::removeClir()
+{
+  qDebug("removeClir");
+  _ClirTable->removeRow();
 }

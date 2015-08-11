@@ -22,6 +22,7 @@ public:
   void setColumnWidths();
   void updateHeight();
   void addRow();
+  void removeRow();
 private:
   TableModel *_TableModel;
   int        _Width;

@@ -67,6 +67,12 @@ void TableView::addRow()
   updateHeight();
 }
 
+void TableView::removeRow()
+{
+  _TableModel->removeRow();
+  updateHeight();
+}
+
 int TableView::getComputedHeight()
 {
   int tRowHeight = rowHeight(0);

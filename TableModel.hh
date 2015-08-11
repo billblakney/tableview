@@ -46,6 +46,7 @@ public:
 #endif
 
   void addRow();
+  void removeRow();
 
 private:
 #ifdef USE_ABSTRACT
