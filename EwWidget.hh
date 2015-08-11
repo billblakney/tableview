@@ -10,9 +10,11 @@ class EwWidget : public QWidget
   Q_OBJECT
 public:
   static const int kWidth;
+  static const int kHeight;
 
   EwWidget(QWidget *aParent);
   virtual ~EwWidget();
+  void updateSize();
   void moveClirTable();
 
 public slots:

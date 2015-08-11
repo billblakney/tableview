@@ -1,13 +1,7 @@
-/*
- * TableView.cc
- *
- *  Created on: Aug 9, 2015
- *      Author: Bill
- */
-
 #include "TableView.hh"
 #include "TableModel.hh"
 
+#include <iostream>
 #include <QHeaderView>
 #include <QLayout>
 
@@ -45,8 +39,11 @@ void TableView::updateHeight()
 {
   int tHeight = getComputedHeight();
   QSize tSize(_Width,tHeight);
-
-  setFixedSize(tSize);
+std::cout << "table resize(w,h): " << _Width << "," << tHeight << std::endl;
+//  setFixedSize(tSize);
+  resize(tSize);
+QSize tNewSize = size();
+std::cout << "table size(w,h): " << tNewSize.width() << "," << tNewSize.height() << std::endl;
 }
 
 void TableView::setColumnWidths()

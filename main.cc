@@ -3,6 +3,7 @@
 #include <QHeaderView>
 #include <QPushButton>
 #include <QSplitter>
+#include <QScrollArea>
 #include <QTableView>
 #include <QVBoxLayout>
 #include <QWidget>
@@ -18,13 +19,22 @@ int main(int argc, char **argv)
 
   EwWidget *tEwWidget = new EwWidget(tWidget);
 
+  QScrollArea *tScrollArea = new QScrollArea(tWidget);
+  tScrollArea->setFixedSize(EwWidget::kWidth,EwWidget::kHeight);
+  tScrollArea->setWidgetResizable(false);
+  tScrollArea->setBackgroundRole(QPalette::Dark);
+
+  tScrollArea->setWidget(tEwWidget);
+
+//  tWidget->setStyleSheet("QAbstractScrollArea { margin: 16px; }");
+
   QPushButton *tAddContactButton = new QPushButton("Add Contact Entry",tWidget);
   QPushButton *tRemoveContactButton = new QPushButton("Remove Contact Entry",tWidget);
   QPushButton *tAddClirButton = new QPushButton("Add CLIR Entry",tWidget);
   QPushButton *tRemoveClirButton = new QPushButton("Remove CLIR Entry",tWidget);
 
   QVBoxLayout *tLayout = new QVBoxLayout();
-  tLayout->addWidget(tEwWidget);
+  tLayout->addWidget(tScrollArea);
   tLayout->addWidget(tAddContactButton);
   tLayout->addWidget(tAddClirButton);
   tLayout->addWidget(tRemoveContactButton);
