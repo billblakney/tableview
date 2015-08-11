@@ -7,7 +7,7 @@
 
 const int TableView::kColWidthCD = 43;
 const int TableView::kColWidthLPI = 24;
-const int TableView::kColWidthTOE = 67 + 1;
+const int TableView::kColWidthTOE = 67;
 const int TableView::kColWidthBNG = 43;
 const int TableView::kColWidthFRQ = 58;
 const int TableView::kColWidthPRF = 60;

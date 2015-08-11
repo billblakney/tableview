@@ -17,7 +17,10 @@ EwWidget::EwWidget(QWidget *aParent)
   setStyleSheet("QHeaderView::section { background-color: gray;}");
 
   _ContactTable = new TableView(this,kWidth,4);
+  _ContactTable->hideColumn(2);
   _ClirTable = new TableView(this,kWidth,5);
+  _ClirTable->hideColumn(0);
+  _ClirTable->hideColumn(1);
 
   updateSize();
 
