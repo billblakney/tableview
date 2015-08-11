@@ -21,6 +21,7 @@ TableView::TableView(QWidget *aParent,int aWidth,int aRows)
 
   _TableModel = new TableModel(0,aRows);
   setModel(_TableModel);
+  _TableModel->setupHorizontalHeader();
 
   verticalHeader()->hide();
 

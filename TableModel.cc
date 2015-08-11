@@ -38,7 +38,7 @@ TableModel::TableModel(QObject *parent,int aRows)
     addRow();
   }
 }
-#endif
+void TableModel::setupHorizontalHeader(){  QStringList tHeaderLabels;  QString tCDLabel("CD");  QString tLPILabel("LPI");  QString tTOELabel("TOE");  QString tBNGLabel("BNG");  QString tFRQLabel("FRQ");  QString tPRFLabel("PRF");  QString tAMPLabel("AMP");  QString tPWLabel("PW");  tHeaderLabels.push_back(tCDLabel);  tHeaderLabels.push_back(tLPILabel);  tHeaderLabels.push_back(tTOELabel);  tHeaderLabels.push_back(tBNGLabel);  tHeaderLabels.push_back(tFRQLabel);  tHeaderLabels.push_back(tPRFLabel);  tHeaderLabels.push_back(tAMPLabel);  tHeaderLabels.push_back(tPWLabel);  setHorizontalHeaderLabels(tHeaderLabels);}#endif
 
 #ifdef USE_ABSTRACT
 #else
