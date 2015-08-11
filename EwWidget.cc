@@ -34,17 +34,8 @@ EwWidget::~EwWidget()
 void EwWidget::updateSize()
 {
   int tTablesHeight = _ContactTable->height() + _ClirTable->height();
-std::cout << "_Contact,_Clir,ttl: "
-          << _ContactTable->height() << ","
-          << _ClirTable->height() << ","
-          << tTablesHeight << std::endl;
   int tHeight = (tTablesHeight < kHeight ? kHeight : tTablesHeight);
   resize(kWidth,tHeight);
-std::cout << "EW resize(w,h): " << kWidth << "," << tHeight << std::endl;
-QSize tSize = size();
-//qDebug("size(w,h): " << tSize.width() << "," << tSize.height());
-std::cout << "EW size(w,h): " << tSize.width() << "," << tSize.height() << std::endl;
-//  setFixedSize(kWidth,tHeight);
 }
 
 void EwWidget::moveClirTable()
@@ -55,7 +46,6 @@ void EwWidget::moveClirTable()
 
 void EwWidget::addContact()
 {
-  qDebug("addContact");
   _ContactTable->addRow();
   updateSize();
   moveClirTable();
@@ -63,7 +53,6 @@ void EwWidget::addContact()
 
 void EwWidget::removeContact()
 {
-  qDebug("removeContact");
   _ContactTable->removeRow();
   updateSize();
   moveClirTable();
@@ -71,14 +60,12 @@ void EwWidget::removeContact()
 
 void EwWidget::addClir()
 {
-  qDebug("addClir");
   _ClirTable->addRow();
-  updateSize();//TODO
+  updateSize();
 }
 
 void EwWidget::removeClir()
 {
-  qDebug("removeClir");
   _ClirTable->removeRow();
-  updateSize();//TODO
+  updateSize();
 }
