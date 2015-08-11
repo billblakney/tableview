@@ -32,10 +32,18 @@ TableModel::TableModel(QObject *parent,int aRows)
 #else
 TableModel::TableModel(QObject *parent,int aRows)
   : QStandardItemModel(parent)
-{tBlackBrush.setColor(Qt::red);
-
+{
   for( int i = 0; i < aRows; i++ )
   {
+    addRow();
+  }
+}
+#endif
+
+void TableModel::addRow()
+{
+tBlackBrush.setColor(Qt::red);
+
     QList<QStandardItem*> tList;
 
     QStandardItem *tItem0 = new QStandardItem(QString("A0"));
@@ -56,13 +64,14 @@ TableModel::TableModel(QObject *parent,int aRows)
     tList.push_back(tItem7);
 
     appendRow(tList);
-    for( int j = 0; j < kColumns; j++ )
+
+    for( int i = 0; i < kColumns; i++ )
     {
-      setData(index(i,j),QColor(Qt::blue),Qt::BackgroundRole);
-      setData(index(i,j),QColor(Qt::white),Qt::ForegroundRole);    }
-  }
+      int tRow = rowCount() - 1;
+      setData(index(tRow,i),QColor(Qt::blue),Qt::BackgroundRole);
+      setData(index(tRow,i),QColor(Qt::white),Qt::ForegroundRole);
+    }
 }
-#endif
 
 #ifdef USE_ABSTRACT
 int TableModel::rowCount(const QModelIndex & /*parent*/) const

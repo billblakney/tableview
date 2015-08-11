@@ -27,9 +27,11 @@ EwWidget::~EwWidget()
 void EwWidget::addContact()
 {
   qDebug("addContact");
+  _ContactTable->addRow();
 }
 
 void EwWidget::addClir()
 {
   qDebug("addClir");
+  _ClirTable->addRow();
 }

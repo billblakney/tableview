@@ -20,10 +20,13 @@ public:
   TableView(QWidget *aParent,int width,int aRows);
   virtual ~TableView();
   void setColumnWidths();
-  int getComputedHeight();
+  void updateHeight();
+  void addRow();
 private:
   TableModel *_TableModel;
   int        _Width;
+
+  int getComputedHeight();
 };
 
 #endif /* TABLEVIEW_HH_ */

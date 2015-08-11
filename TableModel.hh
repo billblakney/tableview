@@ -8,7 +8,7 @@
 #ifndef TABLEMODEL_HH_
 #define TABLEMODEL_HH_
 
-#define USE_ABSTRACT
+//#define USE_ABSTRACT
 
 #ifdef USE_ABSTRACT
 #include <QAbstractTableModel>
@@ -44,6 +44,8 @@ public:
   QVariant headerData(int section, Qt::Orientation orientation, int role) const;
 #else
 #endif
+
+  void addRow();
 
 private:
 #ifdef USE_ABSTRACT

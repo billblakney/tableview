@@ -34,21 +34,19 @@ TableView::TableView(QWidget *aParent,int aWidth,int aRows)
   setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
   setColumnWidths();
-
-  int tHeight = getComputedHeight();
-  QSize tSize(_Width,tHeight);
-
-  setFixedSize(tSize);
-#if 0
-  int tHeight = tableView->getComputedHeight();
-  QSize tSize(aWidth,tHeight);
-
-  tableView->setFixedSize(tSize);
-#endif
+  updateHeight();
 }
 
 TableView::~TableView()
 {
+}
+
+void TableView::updateHeight()
+{
+  int tHeight = getComputedHeight();
+  QSize tSize(_Width,tHeight);
+
+  setFixedSize(tSize);
 }
 
 void TableView::setColumnWidths()
@@ -61,6 +59,12 @@ void TableView::setColumnWidths()
   setColumnWidth(TableModel::kColPRF,kColWidthPRF);
   setColumnWidth(TableModel::kColAMP,kColWidthAMP);
   setColumnWidth(TableModel::kColPW,kColWidthPW);
+}
+
+void TableView::addRow()
+{
+  _TableModel->addRow();
+  updateHeight();
 }
 
 int TableView::getComputedHeight()
