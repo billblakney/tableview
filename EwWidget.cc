@@ -16,18 +16,25 @@ EwWidget::EwWidget(QWidget *aParent)
   _ContactTable = new TableView(this,kWidth,4);
   _ClirTable = new TableView(this,kWidth,5);
 
-  int tTableHeight = _ContactTable->height();
-  _ClirTable->move(0,tTableHeight);
+  moveClirTable();
+
 }
 
 EwWidget::~EwWidget()
 {
 }
 
+void EwWidget::moveClirTable()
+{
+  int tTableHeight = _ContactTable->height();
+  _ClirTable->move(0,tTableHeight);
+}
+
 void EwWidget::addContact()
 {
   qDebug("addContact");
   _ContactTable->addRow();
+  moveClirTable();
 }
 
 void EwWidget::addClir()

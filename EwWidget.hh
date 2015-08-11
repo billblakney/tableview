@@ -13,6 +13,7 @@ public:
 
   EwWidget(QWidget *aParent);
   virtual ~EwWidget();
+  void moveClirTable();
 
 public slots:
   void addContact();
